@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en"><head><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1CQ4D3VQ3L"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1CQ4D3VQ3L');
+  </script>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Virtual Pop: The Ultimate Digital Fidget Experience</title>
+
+<meta name="description" content="Experience the ultimate digital bubble wrap. Customize shapes, colors, and textures in this procedural fidget toy with satisfying pops and tilt physics.">
+<meta name="keywords" content="virtual pop, fidget toy, stress relief, sensory app, bubble wrap simulator, ASMR pop, procedural toy, interactive relaxation, digital fidget">
+<meta name="author" content="Chris Pirillo">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f172a">
+
+<meta property="og:site_name" content="Chris Pirillo's Arcade">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Virtual Pop: The Ultimate Digital Fidget Experience">
+<meta property="og:description" content="Experience the ultimate digital bubble wrap. Customize shapes, colors, and textures in this procedural fidget toy with satisfying pops and tilt physics.">
+<meta property="og:url" content="https://pirillo.com/arcade/virtual-pop.html">
+<meta property="og:image" content="https://pirillo.com/arcade/images/virtual-pop.png">
+<meta property="og:image:alt" content="Virtual Pop: The Ultimate Digital Fidget Experience">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ChrisPirillo">
+<meta name="twitter:creator" content="@ChrisPirillo">
+<meta name="twitter:title" content="Virtual Pop: The Ultimate Digital Fidget Experience">
+<meta name="twitter:description" content="Experience the ultimate digital bubble wrap. Customize shapes, colors, and textures in this procedural fidget toy with satisfying pops and tilt physics.">
+<meta name="twitter:image" content="https://pirillo.com/arcade/images/virtual-pop.png">
+<meta name="twitter:domain" content="pirillo.com">
+
+<link rel="canonical" href="https://pirillo.com/arcade/virtual-pop.html">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Virtual Pop: The Ultimate Digital Fidget Experience",
+  "description": "Experience the ultimate digital bubble wrap. Customize shapes, colors, and textures in this procedural fidget toy with satisfying pops and tilt physics.",
+  "keywords": "virtual pop, fidget toy, stress relief, sensory app, bubble wrap simulator, ASMR pop, procedural toy, interactive relaxation, digital fidget",
+  "url": "https://pirillo.com/arcade/virtual-pop.html",
+  "image": "https://pirillo.com/arcade/images/virtual-pop.png",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://pirillo.com/arcade/images/virtual-pop.png"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Chris Pirillo",
+    "url": "https://pirillo.com",
+    "sameAs": [
+      "https://x.com/ChrisPirillo"
+    ]
+  },
+  "mainEntity": {
+    "name": "Virtual Pop: The Ultimate Digital Fidget Experience",
+    "description": "Experience the ultimate digital bubble wrap. Customize shapes, colors, and textures in this procedural fidget toy with satisfying pops and tilt physics.",
+    "image": "https://pirillo.com/arcade/images/virtual-pop.png",
+    "operatingSystem": "Web Browser",
+    "author": {
+      "@type": "Person",
+      "name": "Chris Pirillo"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "@type": "VideoGame",
+    "genre": "Simulation",
+    "applicationCategory": "Game",
+    "playMode": "SinglePlayer"
+  }
+}</script>
+
+<meta charset="UTF-8">
+<style>:root { --bg: #121212; --panel: rgba(20, 20, 20, 0.85); --text: #e0e0e0; --accent: #ff0055; --border: rgba(255,255,255,0.1); --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+* { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; box-sizing: border-box; }
+body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--bg); font-family: var(--font); color: var(--text); touch-action: none; }
+canvas { display: block; width: 100%; height: 100%; transition: opacity 0.5s ease; }
+#transition-curtain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; pointer-events: none; opacity: 0; transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1); z-index: 1500; }
+.icon-btn { background: rgba(255,255,255,0.08); border: 1px solid var(--border); color: var(--text); width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.icon-btn:hover { background: var(--accent); border-color: var(--accent); color: white; transform: scale(1.1); }
+#menu-trigger { position: absolute; top: 20px; right: 20px; z-index: 1000; }
+#start-over-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; display: flex; flex-direction: column; gap: 15px; align-items: center; justify-content: center; z-index: 1100; background: rgba(0,0,0,0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); opacity: 0; transition: opacity 0.5s ease; }
+#start-over-container.active { pointer-events: auto; opacity: 1; }
+.game-btn { background: var(--accent); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-weight: 700; letter-spacing: 1px; font-size: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); cursor: pointer; transform: scale(0.95); opacity: 0; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); pointer-events: none; min-width: 200px; }
+.game-btn.secondary { background: rgba(255,255,255,0.9); color: #000; }
+.game-btn.visible { transform: scale(1); opacity: 1; pointer-events: auto; }
+.game-btn:hover { transform: scale(1.05) translateY(-2px); filter: brightness(1.1); }
+#settings-panel { position: fixed; top: 0; right: 0; height: 100%; width: 340px; background: var(--panel); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-left: 1px solid var(--border); transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1500; display: flex; flex-direction: column; box-shadow: -10px 0 40px rgba(0,0,0,0.5); }
+#settings-panel.open { transform: translateX(0); }
+.panel-header { padding: 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.panel-title { font-weight: 800; text-transform: uppercase; font-size: 16px; letter-spacing: 2px; color: #fff; }
+.panel-scroll { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 32px; }
+.setting-group { display: flex; flex-direction: column; gap: 16px; }
+.group-title { font-size: 12px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; }
+.group-title::after { content:''; height:1px; background: var(--border); flex:1; }
+.control-row { display: flex; flex-direction: column; gap: 8px; }
+.control-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 500; color: #ccc; }
+.control-val { color: var(--accent); font-family: monospace; font-size: 12px; }
+input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent); height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; appearance: none; }
+input[type="range"]::-webkit-slider-thumb { appearance: none; width: 16px; height: 16px; background: var(--accent); border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.3); transition: transform 0.1s; }
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+.color-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.color-item { background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; border: 1px solid transparent; transition: border-color 0.2s; }
+.color-item:hover { border-color: rgba(255,255,255,0.2); }
+.color-item span { font-size: 11px; color: #aaa; font-weight: 600; }
+input[type="color"] { width: 32px; height: 32px; border: none; background: none; cursor: pointer; border-radius: 50%; padding:0; }
+input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+input[type="color"]::-webkit-color-swatch { border: none; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); }
+select { width: 100%; background: rgba(0,0,0,0.3); color: #fff; border: 1px solid var(--border); padding: 12px; border-radius: 8px; font-size: 13px; outline: none; cursor: pointer; transition: border-color 0.2s; }
+select:hover { border-color: var(--accent); }
+.btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.panel-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; padding: 14px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 700; text-transform: uppercase; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.panel-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); }
+.panel-btn.accent { background: var(--accent); border-color: var(--accent); color: white; }
+.panel-btn.accent:hover { filter: brightness(1.1); }
+#info-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+#info-modal.visible { display: flex; }
+.modal-card { background: #1a1a1a; width: 90%; max-width: 400px; padding: 40px; border-radius: 16px; border: 1px solid #333; text-align: center; }
+.modal-links { display: flex; flex-direction: column; gap: 12px; margin: 30px 0; }
+.modal-link { display: block; padding: 14px; background: #222; color: white; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 600; transition: background 0.2s; }
+.modal-link:hover { background: var(--accent); }</style>
+</head>
+<body><h1 style="display: none;">Virtual Pop: The Ultimate Digital Fidget Experience</h1>
+
+    <div id="transition-curtain"></div>
+    <canvas id="canvas"></canvas>
+
+    <button class="icon-btn" id="menu-trigger">☰</button>
+    
+    <div id="start-over-container">
+        <button id="start-over-btn" class="game-btn">Reset</button>
+        <button id="new-toy-btn" class="game-btn secondary">New Toy</button>
+    </div>
+
+    <div id="info-modal">
+        <div class="modal-card">
+            <h2 style="margin-top:0; letter-spacing: 2px;">VIRTUAL POP</h2>
+            <div class="modal-links">
+                <a href="https://pirillo.com/arcade/" class="modal-link" target="_blank">More Apps</a>
+                <a href="https://chris.pirillo.com/" class="modal-link" target="_blank">Follow Chris</a>
+                <a href="https://ctrlaltcreate.live/" class="modal-link" target="_blank">Learn More</a>
+            </div>
+            <button class="panel-btn accent" style="width:100%" id="close-info">CLOSE</button>
+        </div>
+    </div>
+
+    <div id="settings-panel">
+        <div class="panel-header">
+            <span class="panel-title">Virtual Pop</span>
+            <div style="display:flex; gap:10px;">
+                <button class="icon-btn" id="info-btn" style="width:32px; height:32px; font-size:14px;">?</button>
+                <button class="icon-btn" id="close-panel" style="width:32px; height:32px; font-size:14px;">×</button>
+            </div>
+        </div>
+        <div class="panel-scroll">
+            <div class="setting-group">
+                <div class="group-title">Shape</div>
+                <div class="control-row">
+                    <div class="control-label">Density <span class="control-val" id="val-density"></span></div>
+                    <input type="range" id="inp-density" min="4" max="8" step="1">
+                </div>
+                <div class="control-row">
+                    <div class="control-label">Chaos <span class="control-val" id="val-chaos"></span></div>
+                    <input type="range" id="inp-chaos" min="0" max="100">
+                </div>
+                <div class="control-row">
+                    <div class="control-label">Symmetry <span class="control-val" id="val-sym"></span></div>
+                    <input type="range" id="inp-sym" min="0" max="4" step="1">
+                </div>
+                <div class="control-row">
+                    <div class="control-label">Spacing <span class="control-val" id="val-gap"></span></div>
+                    <input type="range" id="inp-gap" min="6" max="25">
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <div class="group-title">Surface</div>
+                <div class="control-row">
+                    <select id="sel-style">
+                        <option value="solid">Solid Plastic</option>
+                        <option value="gradient">Swirly Gradient</option>
+                        <option value="rainbow">Rainbow Plasma</option>
+                        <option value="camo">Swirly Camo</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="setting-group">
+                <div class="group-title">Colors</div>
+                <div class="color-grid">
+                    <div class="color-item"><span>Toy A</span><input type="color" id="col-body"></div>
+                    <div class="color-item"><span>Toy B</span><input type="color" id="col-sec"></div>
+                    <div class="color-item"><span>Bg A</span><input type="color" id="col-bg1"></div>
+                    <div class="color-item"><span>Bg B</span><input type="color" id="col-bg2"></div>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <div class="group-title">System</div>
+                <button class="panel-btn accent" id="btn-randomize">🎲 Randomize Toy</button>
+                <div class="btn-row">
+                    <button class="panel-btn" id="btn-export">Export</button>
+                    <button class="panel-btn" id="btn-import">Import</button>
+                </div>
+                <input type="file" id="file-input" style="display:none" accept=".json">
+            </div>
+        </div>
+    </div>
+
+<script>
+const CONFIG = {
+    density: 6, gap: 10, chaos: 30, symmetry: 4, seed: 12345,
+    style: 'rainbow', 
+    bodyColor: '#ff0055', secColor: '#ff9900', 
+    bg1: '#111111', bg2: '#000000', sound: true
+};
+
+let bubbles = []; 
+let gridMap = new Set(); 
+let modelParams = { cellSize: 0, offset: 0, d: 0 };
+let audioCtx = null;
+let isMenuOpen = false;
+let texturePattern = null; 
+let hullCacheCanvas = null; 
+let sideCacheCanvas = null;
+let dropShadowCache = null;
+
+let mouse = { x: 0, y: 0 };
+let targetTilt = { x: 0, y: 0 };
+let currentTilt = { x: 0, y: 0 };
+let dpr = 1;
+
+function generateTexture() {
+    const tCanvas = document.createElement('canvas');
+    const size = 512; 
+    tCanvas.width = size;
+    tCanvas.height = size;
+    const tCtx = tCanvas.getContext('2d');
+    
+    if (CONFIG.style === 'solid') {
+        tCtx.fillStyle = CONFIG.bodyColor;
+        tCtx.fillRect(0,0,size,size);
+    } 
+    else {
+        const imgData = tCtx.createImageData(size, size);
+        const data = imgData.data;
+        const isCamo = CONFIG.style === 'camo';
+        const isRainbow = CONFIG.style === 'rainbow';
+        const isGradient = CONFIG.style === 'gradient';
+        const c1 = hexToRgb(CONFIG.bodyColor);
+        const c2 = hexToRgb(CONFIG.secColor);
+        const seed = CONFIG.seed % 1000;
+
+        for (let y = 0; y < size; y++) {
+            for (let x = 0; x < size; x++) {
+                const angX = (x / size) * Math.PI * 2;
+                const angY = (y / size) * Math.PI * 2;
+                let n;
+
+                if (isGradient) {
+                    const v1 = Math.sin(angX + seed * 0.2);
+                    const v2 = Math.sin(angY + seed * 0.3);
+                    const v3 = Math.sin(angX + angY + seed * 0.4);
+                    const v4 = Math.cos(angX - seed) * Math.sin(angY + seed);
+                    n = (v1 + v2 + v3 + v4 + 4) / 8;
+                } else if (isCamo) {
+                    const nx = Math.sin(angX + seed) + Math.cos(angY + seed);
+                    const ny = Math.cos(angX - seed) + Math.sin(angY - seed);
+                    const dx = Math.sin(angX * 2 + ny) * 2;
+                    const dy = Math.cos(angY * 2 + nx) * 2;
+                    const v = Math.sin(dx + dy + seed);
+                    n = (v + 1) / 2;
+                    n = smoothstep(0.2, 0.8, n); 
+                } else {
+                    const v1 = Math.sin(angX * 3 + seed);
+                    const v2 = Math.cos(angY * 2 + seed);
+                    const v3 = Math.sin((angX + angY) * 4 + seed);
+                    const v = v1 + v2 + v3;
+                    n = (v + 3) / 6;
+                }
+                
+                const i = (y * size + x) * 4;
+                if (isRainbow) {
+                    const h = (n * 360 + seed * 10) % 360;
+                    const rgb = hslToRgb(h, 0.85, 0.6); 
+                    data[i] = rgb[0];
+                    data[i+1] = rgb[1];
+                    data[i+2] = rgb[2];
+                } else {
+                    data[i] = lerp(c1.r, c2.r, n);
+                    data[i+1] = lerp(c1.g, c2.g, n);
+                    data[i+2] = lerp(c1.b, c2.b, n);
+                }
+                data[i+3] = 255; 
+            }
+        }
+        tCtx.putImageData(imgData, 0, 0);
+    }
+    return ctx.createPattern(tCanvas, 'repeat'); 
+}
+
+function smoothstep(min, max, value) {
+  var x = Math.max(0, Math.min(1, (value-min)/(max-min)));
+  return x*x*(3 - 2*x);
+}
+
+function noise(x, y) {
+    const n = Math.sin(x * 12.9898 + y * 78.233 + CONFIG.seed) * 43758.5453;
+    return n - Math.floor(n);
+}
+
+function hexToRgb(hex) {
+    const bigint = parseInt(hex.slice(1), 16);
+    return { r: (bigint >> 16) & 255, g: (bigint >> 8) & 255, b: bigint & 255 };
+}
+
+function lerp(start, end, t) {
+    return start * (1 - t) + end * t;
+}
+
+function hslToRgb(h, s, l) {
+    let r, g, b;
+    if (s === 0) { r = g = b = l; } else {
+        const hue2rgb = (p, q, t) => {
+            if (t < 0) t += 1;
+            if (t > 1) t -= 1;
+            if (t < 1/6) return p + (q - p) * 6 * t;
+            if (t < 1/2) return q;
+            if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+            return p;
+        };
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r = hue2rgb(p, q, h / 360 + 1/3);
+        g = hue2rgb(p, q, h / 360);
+        b = hue2rgb(p, q, h / 360 - 1/3);
+    }
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+
+const Sound = {
+    pop(pitch = 1.0) {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const t = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine'; 
+        osc.frequency.setValueAtTime(450 * pitch, t);
+        osc.frequency.exponentialRampToValueAtTime(80, t + 0.08); 
+        gain.gain.setValueAtTime(0, t);
+        gain.gain.linearRampToValueAtTime(0.5, t + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.12);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(t); osc.stop(t + 0.12);
+    }
+};
+
+function generateModel() {
+    bubbles = [];
+    gridMap.clear();
+    texturePattern = generateTexture();
+    const d = Math.max(4, CONFIG.density);
+    const size = 800;
+    const cellSize = size / d;
+    const radius = (cellSize - CONFIG.gap) / 2;
+    const offset = -size/2 + cellSize/2;
+    modelParams = { cellSize, offset, d, size, radius };
+    
+    let attempts = 0;
+    while(bubbles.length < 4 && attempts < 500) {
+        attempts++;
+        if (attempts > 1) CONFIG.seed += 1.1; 
+        
+        let candidates = [];
+        for(let y=0; y<d; y++) {
+            for(let x=0; x<d; x++) {
+                let nx = (x / (d-1)) * 2 - 1;
+                let ny = (y / (d-1)) * 2 - 1;
+                if(CONFIG.symmetry >= 1) nx = Math.abs(nx); 
+                if(CONFIG.symmetry >= 2) ny = Math.abs(ny); 
+                if(CONFIG.symmetry >= 4) { const dst = Math.sqrt(nx*nx + ny*ny); nx = dst; ny = 0; }
+                const dist = Math.sqrt(nx*nx + ny*ny);
+                const nVal = noise(x, y);
+                const threshold = 1.0 - (CONFIG.chaos / 100); 
+                let active = false;
+                if (Math.abs(nx) < 0.25 && Math.abs(ny) < 0.25) active = true; 
+                else if (dist < threshold + (nVal * 0.2)) active = true;
+                if (active) candidates.push({ x: offset + x * cellSize, y: offset + y * cellSize, gx: x, gy: y, r: radius, popped: false });
+            }
+        }
+        
+        if(candidates.length === 0) continue;
+        const center = candidates.reduce((c, curr) => (curr.x**2+curr.y**2 < c.x**2+c.y**2 ? curr : c), candidates[0]);
+        const map = new Set(candidates.map(c => `${c.gx},${c.gy}`));
+        const connected = new Set([`${center.gx},${center.gy}`]);
+        const queue = [`${center.gx},${center.gy}`];
+        while(queue.length > 0) {
+            const [kx, ky] = queue.shift().split(',').map(Number);
+            [[0,1],[0,-1],[1,0],[-1,0]].forEach(([dx, dy]) => {
+                const nk = `${kx+dx},${ky+dy}`;
+                if (map.has(nk) && !connected.has(nk)) {
+                    connected.add(nk);
+                    queue.push(nk);
+                }
+            });
+        }
+        bubbles = candidates.filter(c => connected.has(`${c.gx},${c.gy}`));
+
+        if (bubbles.length < 4 && candidates.length >= 4) {
+            bubbles = candidates.slice(0, 4);
+        }
+    }
+
+    if (bubbles.length < 4) {
+        bubbles = [];
+        const forcedD = 4; 
+        const forcedSize = 800;
+        const forcedCell = forcedSize / forcedD;
+        const forcedRad = (forcedCell - CONFIG.gap) / 2;
+        const forcedOff = -forcedSize/2 + forcedCell/2;
+        modelParams = { cellSize: forcedCell, offset: forcedOff, d: forcedD, size: forcedSize, radius: forcedRad };
+        const coords = [[1,1], [2,1], [1,2], [2,2]];
+        coords.forEach(([gx, gy]) => {
+            bubbles.push({
+                x: forcedOff + gx * forcedCell,
+                y: forcedOff + gy * forcedCell,
+                gx: gx, gy: gy, r: forcedRad, popped: false
+            });
+        });
+    }
+
+    bubbles.forEach(b => gridMap.add(`${b.gx},${b.gy}`));
+    cacheHull(); 
+    checkWinCondition();
+}
+
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let width, height;
+
+function resize() {
+    dpr = window.devicePixelRatio || 1;
+    const rect = document.body.getBoundingClientRect();
+    width = rect.width; 
+    height = rect.height;
+    
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    
+    ctx.scale(dpr, dpr);
+    
+    texturePattern = generateTexture();
+    cacheHull();
+}
+
+window.addEventListener('resize', resize);
+window.addEventListener('mousemove', e => {
+    targetTilt.x = (e.clientX - width/2) / (width/2);
+    targetTilt.y = (e.clientY - height/2) / (height/2);
+});
+
+window.addEventListener('deviceorientation', e => {
+    if(e.beta && e.gamma) {
+        targetTilt.x = Math.max(-1, Math.min(1, e.gamma / 45));
+        targetTilt.y = Math.max(-1, Math.min(1, e.beta / 45));
+    }
+});
+
+function cacheHull() {
+    if (!modelParams.d || !width || !height || width <= 1) return;
+    const isMobile = width < 600;
+    const baseScale = isMobile ? 600 : 900;
+    const scale = Math.min(width, height) / baseScale;
+
+    if (!hullCacheCanvas) hullCacheCanvas = document.createElement('canvas');
+    if (!sideCacheCanvas) sideCacheCanvas = document.createElement('canvas');
+    if (!dropShadowCache) dropShadowCache = document.createElement('canvas');
+    
+    [hullCacheCanvas, sideCacheCanvas, dropShadowCache].forEach(c => { 
+        c.width = width * dpr; 
+        c.height = height * dpr; 
+    });
+
+    const hCtx = hullCacheCanvas.getContext('2d');
+    const sCtx = sideCacheCanvas.getContext('2d');
+    const dsCtx = dropShadowCache.getContext('2d');
+    hCtx.scale(dpr, dpr);
+    sCtx.scale(dpr, dpr);
+    dsCtx.scale(dpr, dpr);
+
+    const { cellSize, radius } = modelParams;
+    const drawRadius = radius + 20; 
+    const bridgeWidth = drawRadius * 1.5; 
+
+    const tempC = document.createElement('canvas');
+    tempC.width = width * dpr; tempC.height = height * dpr;
+    const tCtx = tempC.getContext('2d');
+    tCtx.scale(dpr, dpr);
+    tCtx.translate(width/2, height/2);
+    tCtx.scale(scale, scale);
+    tCtx.fillStyle = '#fff';
+    
+    bubbles.forEach(b => {
+        const gx = b.gx; const gy = b.gy;
+        if (gridMap.has(`${gx+1},${gy}`)) tCtx.fillRect(b.x, b.y - bridgeWidth/2, cellSize, bridgeWidth);
+        if (gridMap.has(`${gx},${gy+1}`)) tCtx.fillRect(b.x - bridgeWidth/2, b.y, bridgeWidth, cellSize);
+        
+        if (gridMap.has(`${gx+1},${gy}`) && gridMap.has(`${gx},${gy+1}`) && gridMap.has(`${gx+1},${gy+1}`)) {
+             tCtx.fillRect(b.x - 2, b.y - 2, cellSize + 4, cellSize + 4);
+        }
+    });
+    
+    bubbles.forEach(b => {
+        tCtx.beginPath(); tCtx.arc(b.x, b.y, drawRadius, 0, Math.PI*2); tCtx.fill();
+    });
+
+    const tempC2 = document.createElement('canvas');
+    tempC2.width = width * dpr; tempC2.height = height * dpr;
+    const tCtx2 = tempC2.getContext('2d');
+    if (tCtx2.filter !== undefined) tCtx2.filter = 'blur(20px)';
+    tCtx2.drawImage(tempC, 0, 0); 
+    
+    const iData = tCtx2.getImageData(0, 0, width * dpr, height * dpr);
+    const data = iData.data;
+    for(let i=3; i<data.length; i+=4) { data[i] = data[i] > 140 ? 255 : 0; }
+    
+    const cleanC = document.createElement('canvas');
+    cleanC.width = width * dpr; cleanC.height = height * dpr;
+    cleanC.getContext('2d').putImageData(iData, 0, 0);
+
+    hCtx.drawImage(cleanC, 0, 0, width, height); 
+    hCtx.globalCompositeOperation = 'source-in';
+    
+    const MatrixClass = window.DOMMatrix || window.WebKitCSSMatrix;
+    if (MatrixClass) {
+        const matrix = new MatrixClass();
+        matrix.translateSelf(width/2 - 256, height/2 - 256); 
+        matrix.scaleSelf(2, 2); 
+        if (texturePattern && texturePattern.setTransform) texturePattern.setTransform(matrix);
+    }
+    
+    hCtx.fillStyle = texturePattern;
+    hCtx.fillRect(0, 0, width, height);
+    
+    sCtx.drawImage(cleanC, 0, 0, width, height);
+    sCtx.globalCompositeOperation = 'source-in';
+    sCtx.fillStyle = texturePattern;
+    sCtx.fillRect(0,0,width,height);
+    sCtx.globalCompositeOperation = 'source-atop';
+    sCtx.fillStyle = 'rgba(0,0,0,0.4)';
+    sCtx.fillRect(0,0,width,height);
+
+    // Optimized Drop Shadow: Generate a proper BLACK shadow from the mask
+    dsCtx.filter = `blur(${25*scale}px)`;
+    dsCtx.drawImage(cleanC, 0, 0, width, height);
+    dsCtx.globalCompositeOperation = 'source-in';
+    dsCtx.fillStyle = 'rgba(0,0,0,0.4)'; // Explicitly black shadow
+    dsCtx.fillRect(0, 0, width, height);
+    dsCtx.globalCompositeOperation = 'source-over';
+}
+
+function draw() {
+    currentTilt.x += (targetTilt.x - currentTilt.x) * 0.1;
+    currentTilt.y += (targetTilt.y - currentTilt.y) * 0.1;
+    
+    const spotX = width/2 - currentTilt.x * width * 0.3;
+    const spotY = height/2 - currentTilt.y * height * 0.3;
+    
+    const bgGrad = ctx.createRadialGradient(spotX, spotY, 0, spotX, spotY, Math.max(width, height) * 1.5);
+    bgGrad.addColorStop(0, CONFIG.bg1);
+    bgGrad.addColorStop(1, CONFIG.bg2);
+    ctx.fillStyle = bgGrad;
+    ctx.fillRect(0, 0, width, height);
+
+    if (bubbles.length === 0) { requestAnimationFrame(draw); return; }
+    
+    const isMobile = width < 600;
+    const baseScale = isMobile ? 600 : 900;
+    const scale = Math.min(width, height) / baseScale;
+    
+    const topX = currentTilt.x * 12 * scale;
+    const topY = currentTilt.y * 12 * scale;
+    const baseDepth = 25 * scale;
+    const offX = -currentTilt.x * baseDepth + topX;
+    const offY = -currentTilt.y * baseDepth + topY;
+    
+    const foreshortenX = Math.cos(currentTilt.x * 0.4); 
+    const foreshortenY = Math.cos(currentTilt.y * 0.4); 
+
+    const drawW = width * foreshortenX;
+    const drawH = height * foreshortenY;
+
+    if (sideCacheCanvas) {
+        // Draw Pre-Calculated BLACK Shadow
+        if (dropShadowCache) {
+            ctx.drawImage(dropShadowCache, 0, 0, width*dpr, height*dpr, offX + (width - drawW)/2, offY + (height - drawH)/2 + 20 * scale, drawW, drawH);
+        }
+
+        // Draw Depth Layers (Optimized to 5 layers instead of 20)
+        const layers = 5;
+        for(let i=layers; i>0; i--) {
+            const t = i/layers;
+            const lx = lerp(topX, offX, t); 
+            const ly = lerp(topY, offY, t);
+            const dx = lx + (width - drawW)/2;
+            const dy = ly + (height - drawH)/2;
+            ctx.drawImage(sideCacheCanvas, 0, 0, width*dpr, height*dpr, dx, dy, drawW, drawH);
+        }
+    }
+
+    if (hullCacheCanvas) {
+        const hX = topX + (width - drawW)/2;
+        const hY = topY + (height - drawH)/2;
+        ctx.drawImage(hullCacheCanvas, 0, 0, width*dpr, height*dpr, hX, hY, drawW, drawH);
+    }
+
+    ctx.save();
+    ctx.translate(width/2 + topX, height/2 + topY);
+    ctx.scale(scale * foreshortenX, scale * foreshortenY);
+    
+    bubbles.forEach(b => {
+        const cx = b.x; const cy = b.y;
+        
+        ctx.beginPath(); ctx.arc(cx, cy, b.r + 2, 0, Math.PI*2);
+        const socketGrad = ctx.createRadialGradient(cx, cy, b.r-1, cx, cy, b.r+5);
+        socketGrad.addColorStop(0, 'rgba(0,0,0,0.5)'); 
+        socketGrad.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = socketGrad; ctx.fill();
+        
+        if (b.popped) {
+            ctx.beginPath(); ctx.arc(cx, cy, b.r, 0, Math.PI*2);
+            ctx.fillStyle = texturePattern; ctx.fill();
+            
+            const off = b.r * 0.25; 
+            const wallGrad = ctx.createRadialGradient(cx + off, cy + off, b.r * 0.6, cx, cy, b.r);
+            wallGrad.addColorStop(0, 'rgba(0,0,0,0)'); 
+            wallGrad.addColorStop(0.3, 'rgba(0,0,0,0)'); 
+            wallGrad.addColorStop(1, 'rgba(0,0,0,0.75)'); 
+            ctx.fillStyle = wallGrad; ctx.fill();
+            
+            const floorGrad = ctx.createLinearGradient(cx - b.r, cy - b.r, cx + b.r, cy + b.r);
+            floorGrad.addColorStop(0, 'rgba(0,0,0,0)'); 
+            floorGrad.addColorStop(0.6, 'rgba(255,255,255,0)'); 
+            floorGrad.addColorStop(1, 'rgba(255,255,255,0.3)'); 
+            ctx.fillStyle = floorGrad; ctx.fill();
+            
+            ctx.beginPath(); ctx.arc(cx, cy, b.r * 0.85, 0, Math.PI*2); 
+            ctx.strokeStyle = 'rgba(0,0,0,0.25)'; 
+            ctx.lineWidth = b.r * 0.05; 
+            ctx.stroke();
+
+        } else {
+            ctx.beginPath(); ctx.arc(cx, cy, b.r, 0, Math.PI*2);
+            ctx.fillStyle = texturePattern; ctx.fill();
+
+            const shadowOff = b.r * 0.15;
+            const formGrad = ctx.createRadialGradient(cx - shadowOff, cy - shadowOff, b.r * 0.5, cx, cy, b.r);
+            formGrad.addColorStop(0, 'rgba(0,0,0,0)');
+            formGrad.addColorStop(0.7, 'rgba(0,0,0,0.1)'); 
+            formGrad.addColorStop(1, 'rgba(0,0,0,0.6)'); 
+            ctx.fillStyle = formGrad; ctx.fill();
+
+            const lightOff = b.r * 0.25;
+            const lightGrad = ctx.createRadialGradient(cx - lightOff, cy - lightOff, 0, cx - lightOff, cy - lightOff, b.r);
+            lightGrad.addColorStop(0, 'rgba(255,255,255,0.4)'); 
+            lightGrad.addColorStop(0.5, 'rgba(255,255,255,0.1)');
+            lightGrad.addColorStop(1, 'rgba(255,255,255,0)');
+            ctx.fillStyle = lightGrad; ctx.fill();
+            
+            ctx.beginPath(); ctx.arc(cx, cy, b.r * 0.95, -0.5, 1.5); 
+            ctx.strokeStyle = 'rgba(255,255,255,0.05)'; ctx.lineWidth = 1; ctx.stroke();
+        }
+    });
+    ctx.restore();
+    requestAnimationFrame(draw);
+}
+
+function handleInteraction(cx, cy) {
+    if(isMenuOpen) { toggleMenu(false); return; }
+    const menu = document.getElementById('settings-panel');
+    if (isMenuOpen && !menu.contains(document.elementFromPoint(cx, cy))) { toggleMenu(false); return; }
+    
+    const isMobile = width < 600;
+    const baseScale = isMobile ? 600 : 900;
+    const scale = Math.min(width, height) / baseScale;
+    
+    const topX = currentTilt.x * 12 * scale;
+    const topY = currentTilt.y * 12 * scale;
+    const foreshortenX = Math.cos(currentTilt.x * 0.4);
+    const foreshortenY = Math.cos(currentTilt.y * 0.4);
+
+    const wx = (cx - width/2 - topX) / (scale * foreshortenX); 
+    const wy = (cy - height/2 - topY) / (scale * foreshortenY);
+    
+    let hit = false;
+    bubbles.forEach(b => {
+        if (!b.popped && Math.hypot(wx - b.x, wy - b.y) < b.r) { 
+            b.popped = true; 
+            Sound.pop(0.9 + Math.random()*0.2); 
+            checkWinCondition();
+            hit = true;
+        }
+    });
+    
+    if(hit && navigator.vibrate) navigator.vibrate(15);
+}
+
+canvas.addEventListener('mousedown', e => handleInteraction(e.clientX, e.clientY));
+canvas.addEventListener('touchstart', e => { 
+    e.preventDefault(); 
+    if(e.changedTouches.length > 0) handleInteraction(e.changedTouches[0].clientX, e.changedTouches[0].clientY); 
+}, {passive:false});
+
+function checkWinCondition() {
+    const all = bubbles.length > 0 && bubbles.every(b => b.popped);
+    const container = document.getElementById('start-over-container');
+    if(all) {
+        document.getElementById('start-over-btn').classList.add('visible');
+        document.getElementById('new-toy-btn').classList.add('visible');
+        container.classList.add('active');
+    } else {
+        document.getElementById('start-over-btn').classList.remove('visible');
+        document.getElementById('new-toy-btn').classList.remove('visible');
+        container.classList.remove('active');
+    }
+}
+
+function triggerResetSequence() {
+    const container = document.getElementById('start-over-container');
+    container.classList.remove('active');
+    const popped = bubbles.filter(b => b.popped);
+    popped.sort(() => Math.random() - 0.5);
+    popped.forEach((b, i) => {
+        setTimeout(() => {
+            b.popped = false;
+            Sound.pop(1.2 + Math.random() * 0.3); 
+        }, i * 60);
+    });
+}
+
+function resetGame(randomize = false) {
+    if(randomize) triggerRandomize();
+    else triggerResetSequence();
+}
+
+document.getElementById('start-over-btn').addEventListener('click', (e) => { e.stopPropagation(); resetGame(false); });
+document.getElementById('new-toy-btn').addEventListener('click', (e) => { e.stopPropagation(); resetGame(true); });
+
+function toggleMenu(open) {
+    isMenuOpen = open;
+    if(open) document.getElementById('settings-panel').classList.add('open');
+    else document.getElementById('settings-panel').classList.remove('open');
+}
+document.getElementById('menu-trigger').addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(true); });
+document.getElementById('close-panel').addEventListener('click', () => toggleMenu(false));
+
+const UI = {
+    bind(id, key, isNum = false) {
+        const el = document.getElementById(id); const val = document.getElementById(id.replace('inp', 'val'));
+        if(!el) return; el.value = CONFIG[key]; if(val) val.innerText = CONFIG[key];
+        el.addEventListener('input', e => {
+            CONFIG[key] = isNum ? Number(e.target.value) : e.target.value;
+            if(val) val.innerText = CONFIG[key];
+            if(['density','chaos','symmetry','gap'].includes(key)) generateModel();
+            if(['style','bodyColor','secColor'].includes(key)) { texturePattern = generateTexture(); cacheHull(); }
+        });
+    }
+};
+
+UI.bind('inp-density', 'density', true); UI.bind('inp-chaos', 'chaos', true); UI.bind('inp-sym', 'symmetry', true); UI.bind('inp-gap', 'gap', true); UI.bind('col-body', 'bodyColor'); UI.bind('col-sec', 'secColor'); UI.bind('col-bg1', 'bg1'); UI.bind('col-bg2', 'bg2');
+document.getElementById('sel-style').addEventListener('change', e => { CONFIG.style = e.target.value; texturePattern = generateTexture(); cacheHull(); });
+document.getElementById('info-btn').addEventListener('click', () => document.getElementById('info-modal').classList.add('visible'));
+document.getElementById('close-info').addEventListener('click', () => document.getElementById('info-modal').classList.remove('visible'));
+
+async function triggerRandomize(newConfig = null) {
+    const curtain = document.getElementById('transition-curtain');
+    curtain.style.opacity = 1;
+    await new Promise(r => setTimeout(r, 200));
+    document.getElementById('start-over-container').classList.remove('active');
+
+    try {
+        if (newConfig) Object.assign(CONFIG, newConfig);
+        else {
+            CONFIG.seed = Math.random() * 99999; CONFIG.density = Math.floor(Math.random() * 5) + 4; CONFIG.chaos = Math.floor(Math.random() * 100); CONFIG.symmetry = Math.floor(Math.random() * 5); CONFIG.gap = Math.floor(Math.random() * 10) + 6; 
+            const styles = ['solid', 'gradient', 'rainbow', 'camo']; CONFIG.style = styles[Math.floor(Math.random() * styles.length)];
+            const rCol = () => '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            CONFIG.bodyColor = rCol(); CONFIG.secColor = rCol(); CONFIG.bg1 = rCol(); CONFIG.bg2 = rCol();
+        }
+        const safeSet = (id, val) => { const el = document.getElementById(id); if(el) el.value = val; };
+        const safeTxt = (id, val) => { const el = document.getElementById(id); if(el) el.innerText = val; };
+        safeSet('inp-density', CONFIG.density); safeTxt('val-density', CONFIG.density); safeSet('inp-chaos', CONFIG.chaos); safeTxt('val-chaos', CONFIG.chaos); safeSet('inp-sym', CONFIG.symmetry); safeTxt('val-sym', CONFIG.symmetry); safeSet('inp-gap', CONFIG.gap); safeTxt('val-gap', CONFIG.gap); safeSet('sel-style', CONFIG.style); safeSet('col-body', CONFIG.bodyColor); safeSet('col-sec', CONFIG.secColor); safeSet('col-bg1', CONFIG.bg1); safeSet('col-bg2', CONFIG.bg2);
+        generateModel();
+    } finally {
+        curtain.style.opacity = 0;
+    }
+}
+
+document.getElementById('btn-randomize').addEventListener('click', () => triggerRandomize());
+document.getElementById('btn-export').addEventListener('click', () => {
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(CONFIG)], {type:'application/json'})); a.download = `VirtualPop_${Date.now()}.json`; a.click();
+});
+document.getElementById('btn-import').addEventListener('click', () => document.getElementById('file-input').click());
+document.getElementById('file-input').addEventListener('change', e => {
+    const r = new FileReader(); r.onload = ev => triggerRandomize(JSON.parse(ev.target.result)); r.readAsText(e.target.files[0]);
+});
+
+window.onload = () => {
+    resize();
+    triggerRandomize();
+    draw();
+};
+</script>
+
+</body></html>
